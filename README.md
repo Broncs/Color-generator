@@ -4,7 +4,7 @@
 ## color generator - usando a lib do  [values.js](https://github.com/noeldelgado/values.js)
 
 
-[Live Demo](https://app.netlify.com/sites/color-generator-z/settings/general)
+[Live Demo](https://color-generator-z.netlify.app/)
 
 ### clique para copiar , porcentagem define em quantos porcento será adicionado branco/preto, 
 podemos usar cores nos valores #HEXadecimal , ou pelo nome , ex: blue , red .
