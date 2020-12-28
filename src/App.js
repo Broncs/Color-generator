@@ -7,9 +7,7 @@ function App() {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
   const [selectedOption, setSelectedOption] = useState(10);
-  const [list, setList] = useState(
-    new Values("#f15025").all(parseInt(selectedOption))
-  );
+  const [list, setList] = useState(new Values("#f15025").all(parseInt(10)));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +19,6 @@ function App() {
       console.log(error);
     }
   };
-  console.log(parseInt(selectedOption));
 
   return (
     <>
@@ -38,7 +35,9 @@ function App() {
                   value={5}
                   checked={selectedOption === 5}
                   className="form-check-input"
-                  onChange={(e) => setSelectedOption(parseInt(e.target.value))}
+                  onChange={(e) => {
+                    setSelectedOption(parseInt(e.target.value));
+                  }}
                 />
                 5%
               </label>
@@ -87,12 +86,16 @@ function App() {
       </section>
       <section className="colors">
         {list.map((color, index) => {
+          const brightness = color.getBrightness(color.rgb);
+
           return (
             <SingleColor
+              brightness={brightness}
               key={index}
               {...color}
               index={index}
               hexColor={color.hex}
+              selectedOption={selectedOption}
             />
           );
         })}
