@@ -45,7 +45,13 @@ const SingleColor = ({
     >
       <p className="percent-value">{weight}%</p>
       <p className="color-value">{hexValue}</p>
-      {alert && <p className="alert">copied to clipboard</p>}
+      {alert && (
+        <p
+          className={`alert ${brightness < 50 ? "color-light" : "color-black"}`}
+        >
+          copied to clipboard
+        </p>
+      )}
     </article>
   );
 };

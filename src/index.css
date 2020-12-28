@@ -234,6 +234,13 @@ input.error {
   margin-top: 0.5rem;
 }
 
+.alert.color-light {
+  color: var(--clr-white);
+}
+.alert.color-black {
+  color: var(--clr-black);
+}
+
 /* adding porcentage  */
 .form-check {
   display: inline-block;
